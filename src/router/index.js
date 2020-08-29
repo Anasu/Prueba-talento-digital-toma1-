@@ -21,6 +21,16 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "login" */ '../views/Ordenes.vue')
   },
   {
+    path: '/inventario',
+    name: 'Inventario',
+    component: () => import(/* webpackChunkName: "login" */ '../views/Inventario.vue')
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import(/* webpackChunkName: "login" */ '../views/Profile.vue')
+  },
+  {
     path: '/*',
     name: 'Not Found',
     component: () => import(/* webpackChunkName: "login" */ '../views/Not-Found.vue')
