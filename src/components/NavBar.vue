@@ -15,7 +15,7 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item to="/profile">Profile</b-nav-item>
-          <b-nav-item to="/login">Log Out</b-nav-item>
+          <b-nav-item @click="logout">Log Out</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -23,8 +23,20 @@
 </template>
 
 <script>
-  export default {
+import {mapActions} from 'vuex'
 
+  export default {
+    name: 'Navbar',
+    methods: {
+      ...mapActions([
+      'resetLogin',
+    ]),
+      logout()
+      {
+        this.resetLogin();
+        this.$router.push('/login');
+      }
+    }
   }
 </script>
 

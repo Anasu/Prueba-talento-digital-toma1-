@@ -45,6 +45,8 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex';
+
   export default {
     data() {
       return {
@@ -55,11 +57,21 @@
       }
     },
     methods: {
-      onSubmit(evt) {
-        evt.preventDefault()
-        alert(JSON.stringify(this.form))
+      ...mapActions([
+      'postLogin',
+      ]),
+      onSubmit(evt) 
+      {
+        evt.preventDefault();
+        this.postLogin(this.form.username, this.form.password).then(()=>{
+          this.$router.push('/'); 
+        }
+        );
+
+        console.log(JSON.stringify(this.form))
       },
-      reset(evt) {
+      reset(evt) 
+      {
         evt.preventDefault()
         // Resetea los valores de form
         this.form.username = ''
