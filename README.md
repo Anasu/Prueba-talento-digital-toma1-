@@ -1,16 +1,18 @@
 # tarea-classicmodels-orders
 
+Este proyecto se levanta como cualquier proyecto de yarn, siguiendo las instrucciones a continuación:
+
 ## Project setup
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar para desarrollo o visualizacion local
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Compilar para produccion
 ```
 yarn build
 ```
